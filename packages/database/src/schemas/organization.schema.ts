@@ -13,6 +13,7 @@ export const OrganizationTable = pgTable("organizations", {
     .notNull(),
   updatedAt: timestamp("updated_at", { withTimezone: true })
     .defaultNow()
+    .$onUpdate(() => new Date())
     .notNull()
 });
 
@@ -33,7 +34,7 @@ export const OrganizationMemberTable = pgTable(
       .references(() => OrganizationTable.id, {
         onDelete: "cascade"
       }),
-    userId: uuid("user_id")
+    userId: text("user_id")
       .notNull()
       .references(() => UserTable.id, {
         onDelete: "cascade"

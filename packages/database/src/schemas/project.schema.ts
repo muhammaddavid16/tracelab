@@ -23,12 +23,13 @@ export const ProjectTable = pgTable(
     projectKey: text("project_key").notNull(),
     name: text("name").notNull(),
     description: text("description"),
-    createdByUserId: uuid("created_by_user_id").references(() => UserTable.id),
+    createdByuserId: text("created_by_user_id").references(() => UserTable.id),
     createdAt: timestamp("created_at", { withTimezone: true })
       .defaultNow()
       .notNull(),
     updatedAt: timestamp("updated_at", { withTimezone: true })
       .defaultNow()
+      .$onUpdate(() => new Date())
       .notNull()
   },
   (table) => [
@@ -61,7 +62,7 @@ export const ApiTokenTable = pgTable("api_tokens", {
   isActive: boolean("is_active").default(true).notNull(),
   lastUsedAt: timestamp("last_used_at", { withTimezone: true }),
   expiresAt: timestamp("expires_at", { withTimezone: true }),
-  createdByUserId: uuid("created_by_user_id").references(() => UserTable.id),
+  createdByUserId: text("created_by_user_id").references(() => UserTable.id),
   createdAt: timestamp("created_at", { withTimezone: true })
     .defaultNow()
     .notNull()
@@ -90,6 +91,7 @@ export const ModuleTable = pgTable(
       .notNull(),
     updatedAt: timestamp("updated_at", { withTimezone: true })
       .defaultNow()
+      .$onUpdate(() => new Date())
       .notNull()
   },
   (table) => [
@@ -122,6 +124,7 @@ export const ScenarioTable = pgTable(
       .notNull(),
     updatedAt: timestamp("updated_at", { withTimezone: true })
       .defaultNow()
+      .$onUpdate(() => new Date())
       .notNull()
   },
   (table) => [
@@ -155,6 +158,7 @@ export const TestCaseTable = pgTable(
       .notNull(),
     updatedAt: timestamp("updated_at", { withTimezone: true })
       .defaultNow()
+      .$onUpdate(() => new Date())
       .notNull()
   },
   (table) => [

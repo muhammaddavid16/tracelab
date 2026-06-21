@@ -11,8 +11,6 @@
 # deps
 node_modules/
 
-src/migrations
-
 # env
 .env
 .env.production

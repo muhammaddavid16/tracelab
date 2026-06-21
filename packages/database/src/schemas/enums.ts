@@ -1,9 +1,12 @@
 import { pgEnum } from "drizzle-orm/pg-core";
 
+export const UserRoleEnum = pgEnum("user_role", ["ADMIN", "USER"]);
+
 export const OrganizationRoleEnum = pgEnum("organization_role", [
   "OWNER",
   "ADMIN",
-  "MEMBER"
+  "MEMBER",
+  "VIEWER"
 ]);
 
 export const ExecutionStatusEnum = pgEnum("execution_status", [
