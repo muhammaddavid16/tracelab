@@ -212,9 +212,6 @@ importers:
       '@hono/node-server':
         specifier: ^2.0.5
         version: 2.0.5(hono@4.12.26)
-      '@hono/zod-validator':
-        specifier: ^0.8.0
-        version: 0.8.0(hono@4.12.26)(zod@4.4.3)
       '@tracelab/database':
         specifier: workspace:*
         version: link:../../packages/database
@@ -816,12 +813,6 @@ packages:
     engines: {node: '>=20'}
     peerDependencies:
       hono: ^4
-
-  '@hono/zod-validator@0.8.0':
-    resolution: {integrity: sha512-5uS4S1/LKtZQYvD4BtpPUFkOv8d1wNxHHrChm26buMiEYc1FrHWvDUaKVBwkiVtvSExHSpLGDvcnpI2Copyj9w==}
-    peerDependencies:
-      hono: '>=4.10.0'
-      zod: ^3.25.0 || ^4.0.0
 
   '@noble/ciphers@2.2.0':
     resolution: {integrity: sha512-Z6pjIZ/8IJcCGzb2S/0Px5J81yij85xASuk1teLNeg75bfT07MV3a/O2Mtn1I2se43k3lkVEcFaR10N4cgQcZA==}
@@ -1452,11 +1443,6 @@ snapshots:
     dependencies:
       hono: 4.12.26
 
-  '@hono/zod-validator@0.8.0(hono@4.12.26)(zod@4.4.3)':
-    dependencies:
-      hono: 4.12.26
-      zod: 4.4.3
-
   '@noble/ciphers@2.2.0': {}
 
   '@noble/hashes@2.2.0': {}
@@ -1475,7 +1461,7 @@ snapshots:
 
   '@types/pg@8.20.0':
     dependencies:
-      '@types/node': 25.9.2
+      '@types/node': 20.19.43
       pg-protocol: 1.14.0
       pg-types: 2.2.0
 

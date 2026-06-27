@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@hono/node-server": "^2.0.5",
-    "@hono/zod-validator": "^0.8.0",
     "@tracelab/database": "workspace:*",
     "better-auth": "^1.6.19",
     "dotenv": "^17.4.2",

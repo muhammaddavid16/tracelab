@@ -1,6 +1,6 @@
 import { db } from "@tracelab/database";
 import { eq, and } from "drizzle-orm";
-import { slugify } from "./slugify";
+import { slugify } from "../utils/slugify";
 
 export async function generateUniqueSlug(
   base: string,

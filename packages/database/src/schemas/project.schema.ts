@@ -23,7 +23,7 @@ export const ProjectTable = pgTable(
     projectKey: text("project_key").notNull(),
     name: text("name").notNull(),
     description: text("description"),
-    createdByuserId: text("created_by_user_id").references(() => UserTable.id),
+    createdByUserId: text("created_by_user_id").references(() => UserTable.id),
     createdAt: timestamp("created_at", { withTimezone: true })
       .defaultNow()
       .notNull(),
